@@ -1,0 +1,23 @@
+name: windows
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'cmd'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: installing chrome remote desktop
+      run: ./setup.ps1
+    - name: starting chrome remote desktop
+      run: ${{ github.event.inputs.authcode }} -pin=123456
+    - name: installing other requirements
+      run: ./installer.ps1
+    - name: Keep Alive
+      run: ./timeout.ps1
