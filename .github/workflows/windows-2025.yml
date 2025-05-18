@@ -1,4 +1,4 @@
-name: windows
+name: windows-2025
 
 on: 
   workflow_dispatch:
