@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: installing chrome remote desktop
-      run: ./setup.ps1
+      run: ./setupnores.ps1
     - name: starting chrome remote desktop
       run: ${{ github.event.inputs.authcode }} -pin=123456
     - name: installing other requirements
