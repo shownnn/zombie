@@ -1,0 +1,21 @@
+name: ubuntu
+
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'cmd'
+        required: true
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: installing chrome remote desktop
+      run: ./setup.sh
+    - name: starting chrome remote desktop
+      run: ${{ github.event.inputs.authcode }} -pin=123456
+    - name: Keep Alive
+      run: sleep infinity
