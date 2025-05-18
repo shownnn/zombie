@@ -20,5 +20,5 @@ sudo gdebi -n /tmp/google-chrome.deb
 rm /tmp/google-chrome.deb
 
 sudo apt install flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
-flatpak install flathub org.vinegarhq.Sober
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
+sudo flatpak install flathub org.vinegarhq.Sober
