@@ -7,7 +7,7 @@ sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y wget curl gdebi-core desktop-base xscreensaver
 
-sudo apt install -y xfce4
+sudo apt install -y xfce4 xfce4-goodies
 
 echo "exec /usr/bin/xfce4-session" > ~/.chrome-remote-desktop-session
 
