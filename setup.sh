@@ -18,3 +18,7 @@ rm /tmp/chrome-remote-desktop.deb
 wget -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo gdebi -n /tmp/google-chrome.deb
 rm /tmp/google-chrome.deb
+
+sudo apt install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo reboot
