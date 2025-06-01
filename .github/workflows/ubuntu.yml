@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
+    - name: installing chrome remote desktop
+      run: sh ./setup.sh
+    - name: starting chrome remote desktop
+      run: ${{ github.event.inputs.authcode }} -pin=123456
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
       with:
@@ -22,9 +26,5 @@ jobs:
           remove-haskell: 'true'
           remove-codeql: 'true'
           remove-docker-images: 'true'
-    - name: installing chrome remote desktop
-      run: sh ./setup.sh
-    - name: starting chrome remote desktop
-      run: ${{ github.event.inputs.authcode }} -pin=123456
     - name: Keep Alive
       run: sleep infinity
