@@ -3,8 +3,8 @@ set -e
 
 sudo ufw disable
 
-#sudo apt update && sudo apt upgrade -y
-#this reduces speed severely, i may add it back later
+sudo apt update && sudo apt upgrade -y
+#this reduces speed severely, but breaks without it. try --fix-missing? 
 
 sudo apt install -y wget curl gdebi-core desktop-base xscreensaver
 
