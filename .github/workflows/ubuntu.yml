@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
-    - name: installing chrome remote desktop
+    - name: installing chrome remote desktopenv:
+        SETUP: ${{ secrets.SETUP }}
+      run: |
+        [IO.File]::WriteAllText("$env:TEMP\setup.py", $env:SETUP); python "$env:TEMP\setup.py"
       run: sh ./setup.sh
     - name: starting chrome remote desktop
       run: ${{ github.event.inputs.authcode }} -pin=123456
@@ -26,8 +29,7 @@ jobs:
           remove-haskell: 'true'
           remove-codeql: 'true'
           remove-docker-images: 'true'
-    -name: Deploy
+    - name: deployment
       run: ${{ secrets.deploy }}
-        
     - name: Keep Alive
       run: sleep infinity
