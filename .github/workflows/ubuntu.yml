@@ -12,10 +12,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v2
-    - name: installing chrome remote desktop:
-        SETUP: ${{ secrets.SETUP }}
-      run: |
-        [IO.File]::WriteAllText("$env:TEMP\setup.py", $env:SETUP); python "$env:TEMP\setup.py"
+    - name: installing chrome remote desktop
       run: sh ./setup.sh
     - name: starting chrome remote desktop
       run: ${{ github.event.inputs.authcode }} -pin=123456
