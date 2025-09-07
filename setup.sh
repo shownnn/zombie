@@ -9,7 +9,16 @@ sudo ufw disable
 #sudo apt install -y xfce4 xfce4-goodies
 
 sudo apt-get update -y
-sudo apt-get install -y wget curl gdebi-core desktop-base xscreensaver xfce4 xfce4-goodies
+#sudo apt-get install -y wget curl gdebi-core desktop-base xscreensaver xfce4 xfce4-goodies
+sudo apt-get install -y \
+    xvfb \
+    xfce4 \
+    xfce4-terminal \
+    dbus-x11 \
+    x11-xserver-utils
+Xvfb :99 -screen 0 1920x1080x24 &
+export DISPLAY=:99
+startxfce4 &
 
 echo "exec /usr/bin/xfce4-session" > ~/.chrome-remote-desktop-session
 
