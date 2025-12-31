@@ -1,4 +1,4 @@
-name: ubuntu 2
+name: ubuntu (no deploy script)
 
 on: 
   workflow_dispatch:
