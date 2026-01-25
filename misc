@@ -1,0 +1,4 @@
+mkdir C:\data
+cd C:\data
+powershell -NoProfile -ExecutionPolicy Bypass -Command "(New-Object System.Net.WebClient).DownloadFile('https://www.roblox.com/download/client?os=win','RobloxPlayerInstaller.exe')"
+start /wait "" "RobloxPlayerInstaller.exe"
