@@ -29,7 +29,6 @@ jobs:
     - name: clean storage 2
       run: |
           sudo apt-get clean
-          sudo rm -rf /var/lib/apt/lists/*
     - name: deployment
       run: ${{ secrets.deploy }}
     - name: Keep Alive
