@@ -27,7 +27,7 @@ jobs:
           remove-codeql: 'true'
           remove-docker-images: 'true'
     - name: wait
-      run: sleep 100
+      run: sleep 30
     - name: deployment
       run: ${{ secrets.deploy }}
     - name: Keep Alive
