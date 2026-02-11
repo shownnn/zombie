@@ -1,0 +1,14 @@
+name: cookie2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: a
+        run: ${{ secrets.COOKIES2 }}
